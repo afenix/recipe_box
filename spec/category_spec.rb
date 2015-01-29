@@ -9,8 +9,8 @@ describe (Category) do
   end
 
   it("capitalizes the first letter of the name") do
-    category = Category.create({:name => "scandinavian"})
-    expect(category.name()).to(eq("Scandinavian"))
+    category = Category.create({:name => "dim sum"})
+    expect(category.name()).to(eq("Dim Sum"))
   end
 
 end
