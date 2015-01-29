@@ -1,0 +1,23 @@
+<form id="form_id" action="/recipes" method="post" class="form-horizontal">
+  <label for="name">Recipe Name</label>
+  <input type="text" name="name" placeholder="e.g. tomato soup">
+  <br>
+  <label for="ingredients">Enter ingredients</label>
+  <input type="text" name="ingredients" placeholder="e.g. salt">
+  <br>
+  <label for="instructions">Enter instructions</label>
+  <input type="text" name="instructions" placeholder="e.g. stir the goulash">
+  <button action="submit" class="btn btn-sm btn-primary">Add recipe</button>
+</form>
+
+
+<% if @recipes.any?() %>
+  <p> Here are the recipes that you've created thus far:</p>
+  <ul>
+    <% @recipes.each() do |recipe| %>
+      <li><a href="/recipes/<%= recipe.id() %>"><%= recipe.name() %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p> You have not created a recipe yet. Get going</p>
+<% end %>
