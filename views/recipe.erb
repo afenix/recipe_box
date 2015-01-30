@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h4><%= @recipe.name() %></h4>
+</div>
+<h5>Ingredients:
+  <%= @recipe.ingredients() %></h5>
+<h5>Instructions:
+  <%= @recipe.instructions() %></h5>
+  <h5>Categories:
+  <% @recipe.categories.each() do |category| %>
+    <%= category.name() %><br>
+  <% end %>
+</h5
+<br>
+
+
+<form action="/add_categories" method="post" class="form-group">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="recipe_id" value="<%= @recipe.id() %>">
+  <% @categories.each do |category| %>
+  <input type="checkbox" name="category_ids[]" value="<%= category.id() %>"><%= category.name() %>
+  <br>
+  <% end %>
+  <button action="submit" class="btn btn-sm btn-success">Add <%= @recipe.name() %> to selected categories</button>
+</form>
