@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h4><%= @recipe.name() %></h4>
+  <h4><%= @recipe.name() %> <a href="/edit_recipe/<%= @recipe.id() %>" class="btn btn-sm btn-success">Edit recipe</a></h4>
 </div>
 <h5>Ingredients:
   <%= @recipe.ingredients() %></h5>
